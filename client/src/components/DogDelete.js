@@ -21,7 +21,7 @@ const DogDelete = ({deleteHandler}) => {
     return(
         <form onSubmit={formHandler}>
             <div>
-                <label>Are you sure you want to Delete the dog named {name}?</label>
+                <label>Confirm delete of dog named {name}?</label>
             </div>
             <button onClick={()=>{setChoose(true)}}>Yes</button>
             <button>No</button>
