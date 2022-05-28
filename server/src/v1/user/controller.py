@@ -1,6 +1,6 @@
 from flask import request, make_response, jsonify
-from v1.basecontroller import BaseController
 from v1.user.model import UserModel
+from v1.basecontroller import BaseController
 
 class UserController(BaseController):
     _instance = None
@@ -9,7 +9,6 @@ class UserController(BaseController):
         self._instance = UserModel()
 
     def post(self):
-        print(request.json)
         resp = self._instance.create(request.json)
         if resp == False:
             return make_response(jsonify({
@@ -35,7 +34,7 @@ class UserController(BaseController):
             user = self.check(user_id, filters)
             if not isinstance(user, dict):
                 return user
-            return jsonify(user)
+            return jsonify(user)  
         filters['offset'] = int(request.args['offset']) if 'offset' in request.args else 0
         filters['limit'] = int(request.args['limit']) if 'limit' in request.args else 5
         users = self._instance.read(filters)
@@ -62,7 +61,7 @@ class UserController(BaseController):
                 }), 400)
             return jsonify(resp)
         return jsonify(self._instance.update(request.json))
-
+    
     def delete(self, user_id=None):
         if user_id is not None:
             user = self.check(user_id)

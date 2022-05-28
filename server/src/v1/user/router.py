@@ -1,3 +1,4 @@
+
 from flask import Blueprint
 from v1.user.controller import UserController
 from v1.auth import jwt_token_required
