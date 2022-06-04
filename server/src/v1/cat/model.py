@@ -42,8 +42,8 @@ class CatModel():
                     fields = tmp_fields
             if 'id' in filters:
                 sql = "SELECT " + ','.join(fields) + " FROM cats WHERE id = %s"
-                dog = db.fetchone(sql, filters['id'])
-                return dog
+                cat = db.fetchone(sql, filters['id'])
+                return cat
             if 'offset' in filters:
                 offset = int(filters['offset'])
             if 'limit' in filters:
@@ -52,6 +52,7 @@ class CatModel():
         sql = "SELECT " + cols + " FROM cats"
         if not count_only:
             sql += " ORDER BY name LIMIT " + str(offset) + ", " + str(limit)
+        db.connect().ping()
         if count_only:
             row = db.fetchone(sql)
             return row['total'] if row else 0

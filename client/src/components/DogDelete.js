@@ -5,7 +5,7 @@ const DogDelete = ({deleteHandler}) => {
     const location = useLocation();
     const dog = location.state.dog;
 
-    const name = useState(dog.name);
+    //const name = useState(dog.name);
     const [choose, setChoose] = useState(false);
     const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ const DogDelete = ({deleteHandler}) => {
     return(
         <form onSubmit={formHandler}>
             <div>
-                <label>Confirm delete of dog named {name}?</label>
+                <label>Confirm delete of dog named {dog.name}?</label>
             </div>
             <button onClick={()=>{setChoose(true)}}>Yes</button>
             <button>No</button>

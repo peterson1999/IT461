@@ -1,4 +1,4 @@
-@host = http://127.0.0.1:6000/v1/users
+@host = http://127.0.0.1:8080/v1/users
 
 GET {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Imxob3JhIiwiaWQiOjEwMCwiZXhwIjoxNjUyOTU4OTQ0fQ.CB1as3-QfZxj8uAVaYbb5Ar2gMELAqTlzTSWzBfNoMc HTTP/1.1
 

@@ -13,6 +13,8 @@ const Dogs = ({dogs, getDogs}) => {
     }
     return (
         <article>
+            <Link to="/">Go Back</Link>
+            <br></br>
             <h2>Dogs List(<Link to ="/dogs/create">Create</Link>)</h2>
             {dogs?.data?.length
                 ? (

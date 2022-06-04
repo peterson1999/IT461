@@ -1,6 +1,7 @@
 import json
 from flask import Flask, request, jsonify, g
 from v1.dog.router import DogRouter
+from v1.user.router import UserRouter
 from v1.auth import login as auth_login, verify_token as auth_verify_token
 from flask_cors import CORS
 
@@ -15,9 +16,11 @@ CORS(app, resources={r"*": {"origins": [
 ]}},  supports_credentials=True)
 
 app.register_blueprint(DogRouter.handler())
+app.register_blueprint(UserRouter.handler())
 
 @app.route('/v1/login', methods=['POST'])
 def login():
+    print("dasdasdas")
     data = request.json
     if 'username' in data and 'password' in data:
         token = auth_login(data['username'], data['password'])

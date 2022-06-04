@@ -4,7 +4,7 @@ class Db():
     __instance = None
     connection = None
     hostname = "flask-db"
-    port = "3366"
+    port = "3306"
     username = "root"
     password = "root"
     database = "pets"

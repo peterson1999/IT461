@@ -20,8 +20,9 @@ def verify_token(token):
 
 def login(username, password):
     # TODO: use the database to verify the username and password
-    #print("dasdasdasd")
-    if username == 'admin' and password == 'admin':
+    obj = UserModel()
+    user = obj.read({'username' : username, 'password': password})
+    if user is not None:
         payload = {
             'username': username,
             'id': 100,
