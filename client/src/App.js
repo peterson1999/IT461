@@ -56,7 +56,7 @@ function App() {
   const getCats = async (url, options = null) => {
     setUrl(urlCat);
     try {
-        const response = await axiosPrivate.get(url, options);
+        const response = await axiosPrivate.get(urlCat, options);
         console.log(response.data);
         setCats(response.data);
     } catch (err) {
